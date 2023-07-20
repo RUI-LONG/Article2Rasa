@@ -1,0 +1,19 @@
+How to verify your order
+You must verify your order within 48 hours by doing one of the following:
+
+Reply to the authorization email and follow the instructions.
+Complete the verification process through the Orders section.
+Provide customer service with the requested information by writing us a message on our Contact Us page.
+You can find the verification amount or code in your financial transaction records or by contacting your bank directly.
+
+How authorization amounts work
+The authorization amount (or "small charge authorization") is initiated by the credit card or third party (Apple Pay, PayPal, etc.) processor to verify your account. They're confirming a credit card is valid and that the customer has enough funds to make a purchase.
+
+Processors will post a small charge (typically $1-2 USD) to authorize an account temporarily. This may appear on your credit card statement as a separate charge or simply included in the order total with iHerb listed as the recipient.
+
+Note, this is not an actual or permanent charge by iHerb. You'll receive an email requesting to verify the amount charged for the order you placed. The amount will be returned to you once the account is verified.
+
+How authorization codes work
+Authorization codes may also be referred to as merchant, confirmation, transaction, or verification codes. You can get the 6-digit code from your financial institution. Authorization codes may contain letters and numbers or only numbers. 
+
+The order may be placed on hold until you provide an authorization code to verify payment. This security measure protects our customers from fraudulent charges.

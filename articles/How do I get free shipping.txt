@@ -1,0 +1,14 @@
+How do I get free shipping?
+For free shipping, your order’s subtotal must meet the order value requirement. The minimum order value requirement may differ depending on the delivery destination.
+
+Add an item to your shopping cart and navigate to the cart page to proceed to checkout. If offered, the minimum order value requirement to obtain free or flat-rate shipping will be displayed beneath each carrier option.
+
+Please note, free shipping is not available for all countries due to country-specific shipping limitations.
+
+Why is free shipping unavailable to me?
+Free shipping may not be eligible due to certain restrictions. All shipping methods have restrictions on order weight, order price, item type, and delivery address. Below are three examples where free shipping is not available:
+
+The free shipping option cannot be used for customers with a PO Box or APO delivery address.
+The free shipping option cannot be used if customers exceed the carrier weight and order value limits.
+The free shipping carrier may have item restrictions such as no liquids, food products, etc.
+In order to use free shipping, item(s) in your cart may need to be removed. Check the Shipping Information page to find out if items in your cart cannot be transported by the free shipping option.
