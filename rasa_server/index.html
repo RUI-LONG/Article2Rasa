@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasa WebChat Demo</title>
+    <script src="https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.1/lib/index.js"></script>
+    <style>
+        body {
+            background-color: #9cc8c1;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="webchat"></div>
+
+    <script>
+        const loadWebChat = () => {
+            if (!WebChat) setTimeout(loadWebChat, 100);
+            if (WebChat) WebChat.default({
+                selector: "#webchat",
+                initPayload: '/get_started',
+                customData: {},
+                socketUrl: "http://127.0.0.1:5623",
+                socketPath: "/socket.io/",
+                withRules: true,
+                params: {
+                    "storage": "local"
+                },
+                customMessageDelay: (message) => {
+                    let delay = message.length * 30;
+                    if (delay > 3 * 100) delay = 3 * 100;
+                    if (delay < 50) delay = 50;
+                    return delay;
+                },
+            })
+        }
+        setTimeout(loadWebChat, 200);
+    </script>
+</body>
+
+</html>

@@ -110,9 +110,9 @@ class RasaData(YamlLoader):
                 .replace("null", "")
                 .replace("\t", " " * 4)
             )
-            if input_text.count("utter") > 2:
-                last_utterance = input_text.rfind("utter")
-                input_text = input_text[:last_utterance]
+            # if input_text.count("utter") > 2:
+            #     last_utterance = input_text.rfind("utter")
+            #     input_text = input_text[:last_utterance]
 
             input_text = fix_code(input_text)
             data = cls.load_yaml(input_text)

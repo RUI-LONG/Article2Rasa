@@ -1,17 +1,20 @@
-import time
 import streamlit as st
 
 from core.text_loader import read_random_text_file
 from core.gpt_generator import GPT3Generator
 from core.prompts import DEFAULT_PROMPT
-
+from utils.rasa_api import train_model
 
 st.set_page_config(page_title="Generate Rasa NLU Demo", layout="wide")
 
 
 def main():
     user_input = ""
+    is_parsing_success = False
     gpt3_generator = GPT3Generator()
+
+    if not st.session_state.get("generated_nlu"):
+        st.session_state["generated_nlu"] = ""
 
     p1, _ = st.columns([1, 1])
     prompt_area = p1.empty()
@@ -41,7 +44,6 @@ def main():
         st.session_state["content"] = content
 
     if col3.button("Generate NLU !"):
-        start_time = time.time()
         if user_input:
             is_parsing_success, generated_nlu = gpt3_generator.generate(
                 user_input, sys_prompt
@@ -50,10 +52,9 @@ def main():
             is_parsing_success, generated_nlu = gpt3_generator.generate(
                 st.session_state["content"], sys_prompt
             )
+        st.session_state["generated_nlu"] = generated_nlu
 
         result_area.text_area("   ", value=generated_nlu, disabled=True, height=400)
-
-        col5.write(f"Cost time: {time.time() - start_time:.2f} seconds")
 
         if is_parsing_success:
             download_btn_label = "Download Result"
@@ -69,6 +70,19 @@ def main():
                 mime="text/yaml",
             )
 
+    if st.session_state["generated_nlu"] and col4.button(
+        "Train NLU and Activate Model"
+    ):
+        status_code = train_model(st.session_state["generated_nlu"])
+        if status_code == 200:
+            col4.success("Trained and Activate !")
+
+
+# st.sidebar.header("Author: ")
+# st.sidebar.subheader("RUI-LONG CHENG 鄭瑞龍")
+# st.sidebar.markdown("\n")
+# st.sidebar.header("Contact Information: ")
+# st.sidebar.markdown("Email: m61216051116@gmail.com")
 
 if __name__ == "__main__":
     main()
