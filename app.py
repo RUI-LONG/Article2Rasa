@@ -3,7 +3,7 @@ import streamlit as st
 from core.text_loader import read_random_text_file
 from core.gpt_generator import GPT3Generator
 from core.prompts import DEFAULT_PROMPT
-from utils.rasa_api import train_model
+from utils.rasa_api import train_model, activate_model
 
 st.set_page_config(page_title="Generate Rasa NLU Demo", layout="wide")
 
@@ -52,9 +52,8 @@ def main():
             is_parsing_success, generated_nlu = gpt3_generator.generate(
                 st.session_state["content"], sys_prompt
             )
-        st.session_state["generated_nlu"] = generated_nlu
 
-        result_area.text_area("   ", value=generated_nlu, disabled=True, height=400)
+        st.session_state["generated_nlu"] = generated_nlu
 
         if is_parsing_success:
             download_btn_label = "Download Result"
@@ -75,7 +74,14 @@ def main():
     ):
         status_code = train_model(st.session_state["generated_nlu"])
         if status_code == 200:
-            col4.success("Trained and Activate !")
+            status_code = activate_model()
+            if status_code == 200:
+                col4.success("Trained and Activate !")
+
+    if st.session_state["generated_nlu"]:
+        result_area.text_area(
+            "   ", value=st.session_state["generated_nlu"], disabled=True, height=400
+        )
 
 
 # st.sidebar.header("Author: ")
