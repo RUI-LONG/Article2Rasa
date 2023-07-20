@@ -1,81 +1,37 @@
-# Chatbot NLU Enhancement 
-
-This is a simple Streamlit app that produces RASA format NLU based on a provided article.
-
-## Requirements
-
-- Python 3.7.3+
-
-## Installation
-
-1. Install the required Python packages:
-   
-   ```
-   pip install -r requirements.txt
-   ```
-2. Put the openai.key to the credentials folder
- 
-   ```
-   chatbot-nlu-enhancement/
-     ...
-     ├── credentials/openai.key
-     ├── README.md
-     ├── requirements.txt
-     ...
-   ```
-
-## Usage
-
-1. Run the Streamlit app:
-   
-   ```python
-   streamlit run app.py
-   ```
-2. (Optional)Put some article text files under the `articles` folder.
-
-
-3. Open the app in your browser:   
-   http://localhost:8501
-
-
-
 <h1 align="center">
-📖Article2Rasa
+ 📝Article2Rasa🤖
 </h1>
 
-Accurate answers and instant citations for your documents.
+Article2Rasa: A simple tool that generates RASA format NLU from any article, enabling users to effortlessly create custom chatbots within minutes.
+No NLP expertise or YAML file writing required.
+
+For developers and maintainers, it offers a trimmed  version of RASA 2.8.2,  offering ease of scalability, utilization, and maintenance, simplifying the entire process.
+
+## 📚 Demo Links
+- [Demo Video](https://drive.google.com/file/d/1jAHhpMh126qGJdHqwWfbm6pQsishz7RH/view?usp=drive_link)
+- [Infra Draft](https://drive.google.com/file/d/1YGGF8vworq_LN23rYclIOP5DgdKmH1y3/view?usp=sharing)
+
+## 📖 Story Block
+I am actively involved in the dynamic world of e-commerce, catering to multiple clients who own their thriving malls. <br>
+Despite having a wealth of valuable FAQ articles to enhance customer support, these clients currently lack expertise in the realms of NLU and RASA technology. 
+
+To unlock their full potential and foster healthy competition, we have the perfect solution: introducing the revolutionary Article2Rasa tool. 
+
+This user-friendly tool empowers users to build their own chatbots easily, delivering an unparalleled customer experience that will set them apart from the rest of the market.
 
 ## 🔧 Features
 
-- Upload documents 📁(PDF, DOCX, TXT) and answer questions about them.
-- Cite sources📚 for the answers, with excerpts from the text.
+- User-friendly interface for effortless modification of FAQ articles
+- Creation of RASA NLU from FAQ articles using ChatGPT or LLMs (Language Model)
+- Automatic fix YAML and RASA format errors
+- Straightforward RASA server for convenient usage
 
-## 💻 Running Locally
+## 💻 QuickStart
 
-1. Clone the repository📂
+- Checkout [quick_s_tart.md](quick_start.md)
 
-```bash
-git clone https://github.com/mmz-001/knowledge_gpt
-cd knowledge_gpt
-```
+##  🐛 BUG / TODO List
 
-2. Install dependencies with [Poetry](https://python-poetry.org/) and activate virtual environment🔨
+- Sometimes LLM's output can't be parse properly
+- More customization options (e.g. language, input format, etc.)
 
-```bash
-poetry install
-poetry shell
-```
-
-3. Run the Streamlit server🚀
-
-```bash
-cd knowledge_gpt
-streamlit run main.py
-```
-
-## 🚀 Upcoming Features
-
-- Add support for more formats (e.g. webpages 🕸️, PPTX 📊, etc.)
-- Highlight relevant phrases in citations 🔦
-- Support scanned documents with OCR 📝
-- More customization options (e.g. chain type 🔗, chunk size📏, etc.)
