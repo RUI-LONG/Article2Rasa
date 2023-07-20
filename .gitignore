@@ -1,0 +1,18 @@
+# Ignore Python bytecode cache and test directories
+__pycache__/
+*.pyc
+test/
+legacy/
+
+# Ignore sensitive files
+*.key
+credentials.dat
+encrypt.py
+
+# Ignore text and configuration files
+*.txt
+*.yaml
+*.yml
+
+# Ignore debug scripts
+debug.py
