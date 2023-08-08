@@ -1,7 +1,6 @@
 rasa==2.8.2
 rasa-sdk==2.8.1
 streamlit
-cryptography==3.4.8
 beautifulsoup4==4.12.1
 openai==0.27.0
 ruamel.yaml==0.16.13
