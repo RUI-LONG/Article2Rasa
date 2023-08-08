@@ -1,4 +1,4 @@
-rasa==2.8.2
+rasa==2.8.10
 rasa-sdk==2.8.1
 streamlit
 beautifulsoup4==4.12.1
